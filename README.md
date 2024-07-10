@@ -1,1 +1,1 @@
-Terminal based chat application written in C++ and python.
+HTTP server written in c++.
