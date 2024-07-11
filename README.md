@@ -1,1 +1,1 @@
-HTTP server written in c++.
+Multithreaded HTTP server written in C++.
