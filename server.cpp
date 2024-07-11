@@ -63,17 +63,21 @@ public:
     }
 
     void add_dictionary(const std::string& word) {
-        if (word.empty()) return;
-        std::lock_guard<std::mutex> lock(DictionaryLock);
-        if (dictionary.insert(word).second) {
-            std::ofstream fDictionary("dictionary.txt", std::ios::app);
-            if (!fDictionary) {
-                std::cerr << "Failed to open file\n";
-                return;
-            }
-            fDictionary << word << "\n";
+    if (word.empty()) return;
+
+    std::string actual_word = word.substr(5); 
+
+    std::lock_guard<std::mutex> lock(DictionaryLock);
+    if (dictionary.insert(actual_word).second) {
+        std::ofstream fDictionary("dictionary.txt", std::ios::app);
+        if (!fDictionary) {
+            std::cerr << "Failed to open file\n";
+            return;
         }
+        fDictionary << actual_word << "\n";
     }
+}
+
 
     bool check_dictionary(const std::string& word) {
         std::lock_guard<std::mutex> lock(DictionaryLock);

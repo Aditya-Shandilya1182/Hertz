@@ -1,24 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-4">
+    <title>Dictionary Server</title>
+</head>
 <body>
-
-<h1>Basic Dictionary | Demo</h1>
-
-<br>
-<form method="get" target="_blank">
-  <label for="name">Check Word:</label>
-  <input type="text" id="name" name="name"><br>
-  <input type="submit" value="Submit">
-</form>
-<br><br>
-
-<form method="post">
-  <label for="name">Add Word:</label>
-  <input type="text" id="name" name="name"><br>
-  <input type="submit" value="Submit">
-</form>
-<br>
-
-<p>Result: <!Rvalue> </p>
-
+    <h1>Welcome to the Dictionary Server</h1>
+    <form method="get" action="/">
+        <label for="name">Check if word exists in dictionary:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Check</button>
+    </form>
+    <form method="post" action="/">
+        <label for="text">Add word to dictionary:</label>
+        <input type="text" id="text" name="text">
+        <button type="submit">Add</button>
+    </form>
+    <p>Result: <!Rvalue></p>
 </body>
 </html>
